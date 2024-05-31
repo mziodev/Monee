@@ -1,0 +1,84 @@
+//
+//  AccountList.swift
+//  Monee
+//
+//  Created by MZiO on 18/5/24.
+//
+
+import SwiftData
+import SwiftUI
+
+struct AccountList: View {
+    @Query(sort: \Account.name) var accounts: [Account]
+    
+    @Environment(\.modelContext) var modelContext
+    
+    @State private var newAccount: Account?
+    
+    
+    // MARK: - body
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(accounts) { account in
+                    NavigationLink {
+                        AccountDetail(account: account)
+                    } label: {
+                        AccountListRow(
+                            name: account.name,
+                            amount: account.amount
+                        )
+                    }
+                }
+                .onDelete(perform: deleteAccounts)
+            }
+            .navigationTitle("Accounts")
+            
+            
+            // MARK: - new account sheet
+            .sheet(item: $newAccount) { account in
+                NavigationStack {
+                    AccountDetail(account: account, isNew: true)
+                }
+                .interactiveDismissDisabled()
+            }
+            
+            // MARK: - toolbar
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    EditButton()
+                }
+                
+                ToolbarItem {
+                    Button(action: addAccount) {
+                        Label("Add account", systemImage: "plus")
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    // MARK: - functions
+    private func addAccount() {
+        withAnimation {
+            let newItem = Account(name: "", type: .savings, amount: 0)
+            
+            modelContext.insert(newItem)
+            
+            newAccount = newItem
+        }
+    }
+    
+    private func deleteAccounts(offsets: IndexSet) {
+        for index in offsets {
+            modelContext.delete(accounts[index])
+        }
+    }
+}
+
+#Preview {
+    AccountList()
+        .modelContainer(SampleData.shared.modelContainer)
+//        .environment(\.locale, Locale(identifier: "es_ES"))
+}
