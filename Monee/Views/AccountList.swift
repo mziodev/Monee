@@ -14,6 +14,7 @@ struct AccountList: View {
     @Environment(\.modelContext) var modelContext
     
     @State private var newAccount: Account?
+    @State private var showingAddAccountSheet: Bool = false
     
     
     // MARK: - body
@@ -36,9 +37,9 @@ struct AccountList: View {
             
             
             // MARK: - new account sheet
-            .sheet(item: $newAccount) { account in
+            .sheet(isPresented: $showingAddAccountSheet) {
                 NavigationStack {
-                    AccountDetail(account: account, isNew: true)
+                    AccountDetail(account: Account(), isNew: true)
                 }
                 .interactiveDismissDisabled()
             }
@@ -50,7 +51,9 @@ struct AccountList: View {
                 }
                 
                 ToolbarItem {
-                    Button(action: addAccount) {
+                    Button {
+                        showingAddAccountSheet.toggle()
+                    } label: {
                         Label("Add account", systemImage: "plus")
                     }
                 }

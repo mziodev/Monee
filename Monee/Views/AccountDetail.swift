@@ -13,8 +13,6 @@ struct AccountDetail: View {
     
     @Bindable var account: Account
     
-    @State var editingMode = false
-    
     @FocusState var nameTextFieldFocused: Bool
     
     let isNew: Bool
@@ -60,7 +58,6 @@ struct AccountDetail: View {
                     .padding(.horizontal, 5)
                 }
             }
-            .disabled(!isNew && !editingMode)
         }
         .navigationTitle(isNew ? "New account" : account.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -76,7 +73,7 @@ struct AccountDetail: View {
         .toolbar {
             if isNew {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
+                    Button("Save") { dismiss() }
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
@@ -87,9 +84,8 @@ struct AccountDetail: View {
                 }
             } else {
                 ToolbarItem {
-                    Button(editingMode ? "Done" : "Edit") {
-                        editingMode.toggle()
-                        nameTextFieldFocused.toggle()
+                    Button("Done") {
+                        dismiss()
                     }
                 }
             }
@@ -102,17 +98,15 @@ struct AccountDetail: View {
 #Preview("New account") {
     NavigationStack {
         AccountDetail(
-            account: Account(name: "", type: .savings, amount: 0),
+            account: Account(),
             isNew: true
         )
         .modelContainer(SampleData.shared.modelContainer)
-//        .environment(\.locale, Locale(identifier: "es_ES"))
     }
 }
 
 #Preview("Existing account") {
     NavigationStack {
         AccountDetail(account: SampleData.shared.account)
-//            .environment(\.locale, Locale(identifier: "es_ES"))
     }
 }
