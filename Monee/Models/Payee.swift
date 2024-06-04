@@ -10,13 +10,17 @@ import SwiftData
 
 @Model
 class Payee {
-    let name: String
+    var name: String
     
-    init(name: String) {
+    
+    // MARK: - init
+    init(name: String = "") {
         self.name = name
     }
 }
 
+
+// MARK: - sample data extension
 extension Payee {
     static let sampleData = [
         Payee(name: "Froiz"),

@@ -11,6 +11,4 @@ enum AccountType: String, Codable, CaseIterable {
     case cash
     case savings
     case checking
-    
-    var id: Self { self }
 }

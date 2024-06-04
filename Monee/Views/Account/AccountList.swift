@@ -73,8 +73,8 @@ struct AccountList: View {
         }
     }
     
-    private func deleteAccounts(offsets: IndexSet) {
-        for index in offsets {
+    private func deleteAccounts(indexSet: IndexSet) {
+        for index in indexSet {
             modelContext.delete(accounts[index])
         }
     }

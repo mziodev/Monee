@@ -1,40 +1,40 @@
 //
-//  CategoryList.swift
+//  PayeeList.swift
 //  Monee
 //
-//  Created by MZiO on 3/6/24.
+//  Created by MZiO on 4/6/24.
 //
 
 import SwiftData
 import SwiftUI
 
-struct CategoryList: View {
-    @Query(sort: \Category.name) private var categories: [Category]
+struct PayeeList: View {
+    @Query(sort: \Payee.name) private var payees: [Payee]
     
     @Environment(\.modelContext) private var modelContext
     
-    @State private var showingAddCategorySheet: Bool = false
+    @State private var showingAddPayeeSheet: Bool = false
     
     
     // MARK: - body
     var body: some View {
         NavigationStack {
             List {
-                ForEach(categories) { category in
+                ForEach(payees) { payee in
                     NavigationLink {
-                        CategoryDetail(category: category)
+                        PayeeDetail(payee: payee)
                     } label: {
-                        Text(category.name)
+                        Text(payee.name)
                     }
                 }
-                .onDelete(perform: deleteCategories)
+                .onDelete(perform: deletePayees)
             }
-            .navigationTitle("Categories")
+            .navigationTitle("Payees")
             
             
-            // MARK: - add category sheet
-            .sheet(isPresented: $showingAddCategorySheet) {
-                CategoryDetail(category: Category(), isNew: true)
+            // MARK: - add payee sheet
+            .sheet(isPresented: $showingAddPayeeSheet) {
+                PayeeDetail(payee: Payee(), isNew: true)
                     .interactiveDismissDisabled()
             }
             
@@ -43,9 +43,9 @@ struct CategoryList: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        showingAddCategorySheet.toggle()
+                        showingAddPayeeSheet.toggle()
                     } label: {
-                        Label("Add category", systemImage: "plus")
+                        Label("Add payee", systemImage: "plus")
                     }
                 }
                 
@@ -56,14 +56,18 @@ struct CategoryList: View {
         }
     }
     
-    func deleteCategories(indexSet: IndexSet) {
+    
+    // MARK: - functions
+    func deletePayees(indexSet: IndexSet) {
         for index in indexSet {
-            modelContext.delete(categories[index])
+            modelContext.delete(payees[index])
         }
     }
 }
 
+
+// MARK: - preview
 #Preview {
-    CategoryList()
+    PayeeList()
         .modelContainer(SampleData.shared.modelContainer)
 }

@@ -10,6 +10,8 @@
 		080C68DC2C0E13010010CF69 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C68DB2C0E13010010CF69 /* CategoryList.swift */; };
 		080C68DE2C0E18B50010CF69 /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C68DD2C0E18B50010CF69 /* CategoryDetail.swift */; };
 		08645F542C07474F001C85DC /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08645F532C07474F001C85DC /* AccountType.swift */; };
+		08866F542C0F0C1400455EAE /* PayeeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F532C0F0C1400455EAE /* PayeeList.swift */; };
+		08866F562C0F0F4A00455EAE /* PayeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F552C0F0F4A00455EAE /* PayeeDetail.swift */; };
 		0888DD992C08BF5200E8E14D /* AccountListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888DD982C08BF5200E8E14D /* AccountListRow.swift */; };
 		08F92C972BF75EBC00D66510 /* MoneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F92C962BF75EBC00D66510 /* MoneeApp.swift */; };
 		08F92C992BF75EBC00D66510 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F92C982BF75EBC00D66510 /* ContentView.swift */; };
@@ -28,6 +30,8 @@
 		080C68DB2C0E13010010CF69 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		080C68DD2C0E18B50010CF69 /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 		08645F532C07474F001C85DC /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		08866F532C0F0C1400455EAE /* PayeeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeList.swift; sourceTree = "<group>"; };
+		08866F552C0F0F4A00455EAE /* PayeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeDetail.swift; sourceTree = "<group>"; };
 		0888DD982C08BF5200E8E14D /* AccountListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListRow.swift; sourceTree = "<group>"; };
 		08F92C932BF75EBC00D66510 /* Monee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F92C962BF75EBC00D66510 /* MoneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneeApp.swift; sourceTree = "<group>"; };
@@ -73,6 +77,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		08866F522C0F0B8700455EAE /* Custom types */ = {
+			isa = PBXGroup;
+			children = (
+				08645F532C07474F001C85DC /* AccountType.swift */,
+			);
+			path = "Custom types";
+			sourceTree = "<group>";
+		};
+		08866F572C0F0F4E00455EAE /* Payee */ = {
+			isa = PBXGroup;
+			children = (
+				08866F552C0F0F4A00455EAE /* PayeeDetail.swift */,
+				08866F532C0F0C1400455EAE /* PayeeList.swift */,
+			);
+			path = Payee;
+			sourceTree = "<group>";
+		};
 		08F92C8A2BF75EBC00D66510 = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +134,8 @@
 		08F92CAC2BF7677A00D66510 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08866F522C0F0B8700455EAE /* Custom types */,
 				08F92CA82BF7605500D66510 /* Account.swift */,
-				08645F532C07474F001C85DC /* AccountType.swift */,
 				08F92CA42BF75F1600D66510 /* Category.swift */,
 				08F92CA62BF7601300D66510 /* Payee.swift */,
 				08F92CAA2BF760D100D66510 /* Transaction.swift */,
@@ -133,9 +154,10 @@
 		08FEA4A02BF8A3FE00627C69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08F92C982BF75EBC00D66510 /* ContentView.swift */,
 				080C68DA2C0E129E0010CF69 /* Account */,
 				080C68E02C0E18C80010CF69 /* Category */,
-				08F92C982BF75EBC00D66510 /* ContentView.swift */,
+				08866F572C0F0F4E00455EAE /* Payee */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,8 +234,10 @@
 			files = (
 				08F92CA92BF7605500D66510 /* Account.swift in Sources */,
 				08FEA4A42BF8B2BE00627C69 /* AccountDetail.swift in Sources */,
+				08866F542C0F0C1400455EAE /* PayeeList.swift in Sources */,
 				08F92CAF2BF7721700D66510 /* SampleData.swift in Sources */,
 				08F92C992BF75EBC00D66510 /* ContentView.swift in Sources */,
+				08866F562C0F0F4A00455EAE /* PayeeDetail.swift in Sources */,
 				08F92CAB2BF760D100D66510 /* Transaction.swift in Sources */,
 				08F92C972BF75EBC00D66510 /* MoneeApp.swift in Sources */,
 				08FEA4A22BF8A44900627C69 /* AccountList.swift in Sources */,

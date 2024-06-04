@@ -22,6 +22,7 @@ class SampleData {
         let schema = Schema([
             Account.self,
             Category.self,
+            Payee.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
@@ -49,6 +50,10 @@ class SampleData {
             modelContext.insert(category)
         }
         
+        for payee in Payee.sampleData {
+            modelContext.insert(payee)
+        }
+        
 //        Friend.sampleData[0].favoriteMovie = Movie.sampleData[1]
 //        Friend.sampleData[2].favoriteMovie = Movie.sampleData[0]
 //        Friend.sampleData[3].favoriteMovie = Movie.sampleData[4]
@@ -67,5 +72,9 @@ class SampleData {
     
     var category: Category {
         Category.sampleData[0]
+    }
+    
+    var payee: Payee {
+        Payee.sampleData[0]
     }
 }
