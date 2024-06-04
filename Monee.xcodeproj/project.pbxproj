@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080C68DC2C0E13010010CF69 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C68DB2C0E13010010CF69 /* CategoryList.swift */; };
+		080C68DE2C0E18B50010CF69 /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C68DD2C0E18B50010CF69 /* CategoryDetail.swift */; };
 		08645F542C07474F001C85DC /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08645F532C07474F001C85DC /* AccountType.swift */; };
-		08645F562C077054001C85DC /* RemoveZerosFromEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08645F552C077054001C85DC /* RemoveZerosFromEnd.swift */; };
 		0888DD992C08BF5200E8E14D /* AccountListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888DD982C08BF5200E8E14D /* AccountListRow.swift */; };
 		08F92C972BF75EBC00D66510 /* MoneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F92C962BF75EBC00D66510 /* MoneeApp.swift */; };
 		08F92C992BF75EBC00D66510 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F92C982BF75EBC00D66510 /* ContentView.swift */; };
@@ -24,8 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080C68DB2C0E13010010CF69 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		080C68DD2C0E18B50010CF69 /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 		08645F532C07474F001C85DC /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
-		08645F552C077054001C85DC /* RemoveZerosFromEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoveZerosFromEnd.swift; path = Monee/Views/RemoveZerosFromEnd.swift; sourceTree = SOURCE_ROOT; };
 		0888DD982C08BF5200E8E14D /* AccountListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListRow.swift; sourceTree = "<group>"; };
 		08F92C932BF75EBC00D66510 /* Monee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F92C962BF75EBC00D66510 /* MoneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneeApp.swift; sourceTree = "<group>"; };
@@ -52,6 +54,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080C68DA2C0E129E0010CF69 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				08FEA4A32BF8B2BE00627C69 /* AccountDetail.swift */,
+				08FEA4A12BF8A44900627C69 /* AccountList.swift */,
+				0888DD982C08BF5200E8E14D /* AccountListRow.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		080C68E02C0E18C80010CF69 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				080C68DD2C0E18B50010CF69 /* CategoryDetail.swift */,
+				080C68DB2C0E13010010CF69 /* CategoryList.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		08F92C8A2BF75EBC00D66510 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +125,6 @@
 		08F92CAD2BF771FE00D66510 /* Utitliies */ = {
 			isa = PBXGroup;
 			children = (
-				08645F552C077054001C85DC /* RemoveZerosFromEnd.swift */,
 				08F92CAE2BF7721700D66510 /* SampleData.swift */,
 			);
 			path = Utitliies;
@@ -113,9 +133,8 @@
 		08FEA4A02BF8A3FE00627C69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08FEA4A32BF8B2BE00627C69 /* AccountDetail.swift */,
-				08FEA4A12BF8A44900627C69 /* AccountList.swift */,
-				0888DD982C08BF5200E8E14D /* AccountListRow.swift */,
+				080C68DA2C0E129E0010CF69 /* Account */,
+				080C68E02C0E18C80010CF69 /* Category */,
 				08F92C982BF75EBC00D66510 /* ContentView.swift */,
 			);
 			path = Views;
@@ -199,8 +218,9 @@
 				08F92C972BF75EBC00D66510 /* MoneeApp.swift in Sources */,
 				08FEA4A22BF8A44900627C69 /* AccountList.swift in Sources */,
 				08F92CA72BF7601300D66510 /* Payee.swift in Sources */,
+				080C68DE2C0E18B50010CF69 /* CategoryDetail.swift in Sources */,
 				08F92CA52BF75F1600D66510 /* Category.swift in Sources */,
-				08645F562C077054001C85DC /* RemoveZerosFromEnd.swift in Sources */,
+				080C68DC2C0E13010010CF69 /* CategoryList.swift in Sources */,
 				08645F542C07474F001C85DC /* AccountType.swift in Sources */,
 				0888DD992C08BF5200E8E14D /* AccountListRow.swift in Sources */,
 			);

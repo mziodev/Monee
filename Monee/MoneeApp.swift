@@ -13,6 +13,7 @@ struct MoneeApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Account.self,
+            Category.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -78,7 +78,6 @@ struct AccountDetail: View {
                 
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        modelContext.delete(account)
                         dismiss()
                     }
                 }

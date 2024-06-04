@@ -21,6 +21,7 @@ class SampleData {
     private init() {
         let schema = Schema([
             Account.self,
+            Category.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
@@ -44,6 +45,10 @@ class SampleData {
             modelContext.insert(account)
         }
         
+        for category in Category.sampleData {
+            modelContext.insert(category)
+        }
+        
 //        Friend.sampleData[0].favoriteMovie = Movie.sampleData[1]
 //        Friend.sampleData[2].favoriteMovie = Movie.sampleData[0]
 //        Friend.sampleData[3].favoriteMovie = Movie.sampleData[4]
@@ -58,5 +63,9 @@ class SampleData {
     
     var account: Account {
         Account.sampleData[0]
+    }
+    
+    var category: Category {
+        Category.sampleData[0]
     }
 }
