@@ -12,6 +12,10 @@
 		08645F542C07474F001C85DC /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08645F532C07474F001C85DC /* AccountType.swift */; };
 		08866F542C0F0C1400455EAE /* PayeeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F532C0F0C1400455EAE /* PayeeList.swift */; };
 		08866F562C0F0F4A00455EAE /* PayeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F552C0F0F4A00455EAE /* PayeeDetail.swift */; };
+		08866F5A2C0F30E600455EAE /* BasicListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F592C0F30E600455EAE /* BasicListRow.swift */; };
+		08866F5D2C0F513D00455EAE /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F5C2C0F513D00455EAE /* TransactionList.swift */; };
+		08866F5F2C0F546D00455EAE /* TransactionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F5E2C0F546D00455EAE /* TransactionListRow.swift */; };
+		08866F612C0F596700455EAE /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08866F602C0F596700455EAE /* TransactionDetail.swift */; };
 		0888DD992C08BF5200E8E14D /* AccountListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888DD982C08BF5200E8E14D /* AccountListRow.swift */; };
 		08F92C972BF75EBC00D66510 /* MoneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F92C962BF75EBC00D66510 /* MoneeApp.swift */; };
 		08F92C992BF75EBC00D66510 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F92C982BF75EBC00D66510 /* ContentView.swift */; };
@@ -32,6 +36,10 @@
 		08645F532C07474F001C85DC /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		08866F532C0F0C1400455EAE /* PayeeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeList.swift; sourceTree = "<group>"; };
 		08866F552C0F0F4A00455EAE /* PayeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeeDetail.swift; sourceTree = "<group>"; };
+		08866F592C0F30E600455EAE /* BasicListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicListRow.swift; sourceTree = "<group>"; };
+		08866F5C2C0F513D00455EAE /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		08866F5E2C0F546D00455EAE /* TransactionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRow.swift; sourceTree = "<group>"; };
+		08866F602C0F596700455EAE /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		0888DD982C08BF5200E8E14D /* AccountListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListRow.swift; sourceTree = "<group>"; };
 		08F92C932BF75EBC00D66510 /* Monee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F92C962BF75EBC00D66510 /* MoneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneeApp.swift; sourceTree = "<group>"; };
@@ -94,6 +102,16 @@
 			path = Payee;
 			sourceTree = "<group>";
 		};
+		08866F5B2C0F512200455EAE /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				08866F5C2C0F513D00455EAE /* TransactionList.swift */,
+				08866F602C0F596700455EAE /* TransactionDetail.swift */,
+				08866F5E2C0F546D00455EAE /* TransactionListRow.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
 		08F92C8A2BF75EBC00D66510 = {
 			isa = PBXGroup;
 			children = (
@@ -154,10 +172,12 @@
 		08FEA4A02BF8A3FE00627C69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08866F592C0F30E600455EAE /* BasicListRow.swift */,
 				08F92C982BF75EBC00D66510 /* ContentView.swift */,
 				080C68DA2C0E129E0010CF69 /* Account */,
 				080C68E02C0E18C80010CF69 /* Category */,
 				08866F572C0F0F4E00455EAE /* Payee */,
+				08866F5B2C0F512200455EAE /* Transaction */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,14 +255,18 @@
 				08F92CA92BF7605500D66510 /* Account.swift in Sources */,
 				08FEA4A42BF8B2BE00627C69 /* AccountDetail.swift in Sources */,
 				08866F542C0F0C1400455EAE /* PayeeList.swift in Sources */,
+				08866F5A2C0F30E600455EAE /* BasicListRow.swift in Sources */,
 				08F92CAF2BF7721700D66510 /* SampleData.swift in Sources */,
 				08F92C992BF75EBC00D66510 /* ContentView.swift in Sources */,
 				08866F562C0F0F4A00455EAE /* PayeeDetail.swift in Sources */,
 				08F92CAB2BF760D100D66510 /* Transaction.swift in Sources */,
 				08F92C972BF75EBC00D66510 /* MoneeApp.swift in Sources */,
+				08866F612C0F596700455EAE /* TransactionDetail.swift in Sources */,
+				08866F5D2C0F513D00455EAE /* TransactionList.swift in Sources */,
 				08FEA4A22BF8A44900627C69 /* AccountList.swift in Sources */,
 				08F92CA72BF7601300D66510 /* Payee.swift in Sources */,
 				080C68DE2C0E18B50010CF69 /* CategoryDetail.swift in Sources */,
+				08866F5F2C0F546D00455EAE /* TransactionListRow.swift in Sources */,
 				08F92CA52BF75F1600D66510 /* Category.swift in Sources */,
 				080C68DC2C0E13010010CF69 /* CategoryList.swift in Sources */,
 				08645F542C07474F001C85DC /* AccountType.swift in Sources */,
@@ -305,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -362,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -382,6 +406,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Monee/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,6 +435,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Monee/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

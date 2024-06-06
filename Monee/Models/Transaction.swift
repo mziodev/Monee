@@ -5,64 +5,85 @@
 //  Created by MZiO on 17/5/24.
 //
 
+
+/*
+    TODO:
+ 
+    Add different hours for the same day transactions to try a grouping list.
+ 
+ */
+
 import Foundation
 import SwiftData
 
 @Model
 class Transaction {
-    let payee: Payee
-    let category: Category
-    let account: Account
-    let date: Date
-    let memo: String
-    let amount: Float
+    var payee: Payee?
+    var category: Category?
+    var account: Account?
+    var date: Date
+    var memo: String
+    var amount: Decimal
     
-    init(
-        payee: Payee,
-        category: Category,
-        account: Account,
-        date: Date,
-        memo: String,
-        amount: Float
-    ) {
-        self.payee = payee
-        self.category = category
-        self.account = account
+    
+    // MARK: - computed properties
+    static var currencyCode: String {
+        Locale.current.currency?.identifier ?? "USD"
+    }
+    
+    
+    // MARK: - init
+    init(date: Date = .now, memo: String = "", amount: Decimal = 0) {
         self.date = date
         self.memo = memo
         self.amount = amount
     }
 }
 
-/*
+
+// MARK: - sample data extension
 extension Transaction {
     static let sampleData = [
         Transaction(
-            payee: Payee(name: "Froiz"),
-            category: Category(name: "Alimentación"),
-            account: Account(name: <#T##String#>, amount: <#T##Float#>),
-            date: .now,
+            date: .now - (86400 * 3),
             memo: "",
             amount: -24.62
         ),
         
         Transaction(
-            payee: "Carrefour",
-            category: "Gasolina",
-            account: "Sabadell",
-            date: .now,
+            date: .now - (86400 * 10),
             memo: "",
             amount: -20
         ),
         
         Transaction(
-            payee: "CLRK",
-            category: "Para ingresar",
-            account: "Cash",
-            date: .now,
+            date: .now - (86400 * 2),
             memo: "Eugenio, mes pagado",
-            amount: 50
+            amount: 55
+        ),
+        
+        Transaction(
+            date: .now - (86400 * 1),
+            memo: "CeraVe cleanser",
+            amount: 12.95
+        ),
+        
+        Transaction(
+            date: .now - (86400 * 10),
+            memo: "",
+            amount: -43.35
+        ),
+        
+        Transaction(
+            date: .now - (86400 * 10),
+            memo: "",
+            amount: -12.95
+        ),
+        
+        Transaction(
+            date: .now - (86400 * 2),
+            memo: "Lucía, mes pagado",
+            amount: 100
         ),
     ]
 }
-*/

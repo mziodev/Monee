@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct AccountList: View {
-    @Query(sort: \Account.name) var accounts: [Account]
+    @Query(sort: \Account.name) private var accounts: [Account]
     
     @Environment(\.modelContext) var modelContext
     
@@ -27,7 +27,8 @@ struct AccountList: View {
                     } label: {
                         AccountListRow(
                             name: account.name,
-                            amount: account.amount
+                            amount: account.amount,
+                            transactionsNumber: account.transactions.count
                         )
                     }
                 }

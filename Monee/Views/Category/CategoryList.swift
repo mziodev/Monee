@@ -24,7 +24,10 @@ struct CategoryList: View {
                     NavigationLink {
                         CategoryDetail(category: category)
                     } label: {
-                        Text(category.name)
+                        BasicListRow(
+                            name: category.name,
+                            transactionsNumber: category.transactions.count
+                        )
                     }
                 }
                 .onDelete(perform: deleteCategories)
@@ -56,6 +59,8 @@ struct CategoryList: View {
         }
     }
     
+    
+    // MARK: - functions
     func deleteCategories(indexSet: IndexSet) {
         for index in indexSet {
             modelContext.delete(categories[index])
@@ -63,6 +68,8 @@ struct CategoryList: View {
     }
 }
 
+
+// MARK: - previews
 #Preview {
     CategoryList()
         .modelContainer(SampleData.shared.modelContainer)

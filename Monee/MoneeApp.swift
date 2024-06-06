@@ -15,6 +15,7 @@ struct MoneeApp: App {
             Account.self,
             Category.self,
             Payee.self,
+            Transaction.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

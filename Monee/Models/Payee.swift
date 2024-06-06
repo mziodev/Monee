@@ -12,6 +12,9 @@ import SwiftData
 class Payee {
     var name: String
     
+    @Relationship(deleteRule: .cascade)
+    var transactions = [Transaction]()
+    
     
     // MARK: - init
     init(name: String = "") {
@@ -33,5 +36,6 @@ extension Payee {
         Payee(name: "Gas Natural Fenosa"),
         Payee(name: "ACS"),
         Payee(name: "CLRK"),
+        Payee(name: "Druni"),
     ]
 }

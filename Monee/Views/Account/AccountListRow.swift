@@ -10,11 +10,14 @@ import SwiftUI
 struct AccountListRow: View {
     let name: String
     let amount: Decimal
+    let transactionsNumber: Int
     
     var body: some View {
         HStack {
-            Text(name)
-                .font(.headline)
+            BasicListRow(
+                name: name,
+                transactionsNumber: transactionsNumber
+            )
             
             Spacer()
             
@@ -29,6 +32,6 @@ struct AccountListRow: View {
 }
 
 #Preview {
-    AccountListRow(name: "ABANCA", amount: 2345.67)
+    AccountListRow(name: "ABANCA", amount: 2345.67, transactionsNumber: 3)
         .padding(.horizontal)
 }

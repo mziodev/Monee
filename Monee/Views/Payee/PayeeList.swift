@@ -24,7 +24,10 @@ struct PayeeList: View {
                     NavigationLink {
                         PayeeDetail(payee: payee)
                     } label: {
-                        Text(payee.name)
+                        BasicListRow(
+                            name: payee.name,
+                            transactionsNumber: payee.transactions.count
+                        )
                     }
                 }
                 .onDelete(perform: deletePayees)
