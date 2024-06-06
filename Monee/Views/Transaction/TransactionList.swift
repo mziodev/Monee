@@ -16,7 +16,7 @@ import SwiftData
 import SwiftUI
 
 struct TransactionList: View {
-    let accountName: String
+    let account: Account?
     
     @Environment(\.modelContext) private var modelContext
     
@@ -27,7 +27,7 @@ struct TransactionList: View {
         ]
     ) var transactions: [Transaction]
     
-    @State private var showingAddTransactionSheet: Bool = false
+    @State private var showingAccountDetailSheet: Bool = false
      
     
     // MARK: - computed propeties
@@ -41,12 +41,14 @@ struct TransactionList: View {
     
     
     //MARK: - init
-    init(accountName: String = "") {
-        self.accountName = accountName
+    init(account: Account? = nil) {
+        self.account = account
         
-        if !self.accountName.isEmpty {
+        let accountName = self.account?.name ?? ""
+        
+        if self.account != nil {
             _transactions = Query(
-                filter: #Predicate { $0.account?.name == accountName ?? "" },
+                filter: #Predicate { $0.account?.name == accountName },
                 sort: [
                     SortDescriptor(\Transaction.date, order: .reverse),
                     SortDescriptor(\Transaction.payee?.name)
@@ -87,26 +89,30 @@ struct TransactionList: View {
                     }
                 }
             }
-            .navigationTitle("Transactions")
+            .navigationTitle(account != nil ? account!.name : "All accounts")
+            .navigationBarTitleDisplayMode(.inline)
             
             
-            // MARK: - add transaction sheet
-            .sheet(isPresented: $showingAddTransactionSheet) {
-                TransactionDetail(
-                    transaction: Transaction(),
-                    isNew: true
-                )
-                .interactiveDismissDisabled()
+            // MARK: - edit account sheet
+            .sheet(isPresented: $showingAccountDetailSheet) {
+                if let account = self.account {
+                    NavigationStack {
+                        AccountDetail(account: account)
+                            .interactiveDismissDisabled()
+                    }
+                }
             }
             
             
             // MARK: - toolbar
             .toolbar {
-                ToolbarItem {
-                    Button {
-                        showingAddTransactionSheet.toggle()
-                    } label: {
-                        Label("Add transaction", systemImage: "plus")
+                if account != nil {
+                    ToolbarItem {
+                        Button {
+                            showingAccountDetailSheet.toggle()
+                        } label: {
+                            Label("Edit account", systemImage: "square.and.pencil")
+                        }
                     }
                 }
                 
@@ -120,12 +126,12 @@ struct TransactionList: View {
 
 
 // MARK: - previews
-#Preview("All accounts list") {
+#Preview("All accounts") {
     TransactionList()
         .modelContainer(SampleData.shared.modelContainer)
 }
 
-#Preview("Filtered by account list") {
-    TransactionList(accountName: "Sabadell")
+#Preview("Filtered by account") {
+    TransactionList(account: SampleData.shared.account)
         .modelContainer(SampleData.shared.modelContainer)
 }

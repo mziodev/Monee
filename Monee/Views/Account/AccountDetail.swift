@@ -75,17 +75,17 @@ struct AccountDetail: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { dismiss() }
                 }
-                
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
             } else {
                 ToolbarItem {
                     Button("Done") {
                         dismiss()
                     }
+                }
+            }
+            
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    dismiss()
                 }
             }
         }

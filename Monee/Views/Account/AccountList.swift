@@ -16,14 +16,32 @@ struct AccountList: View {
     @State private var newAccount: Account?
     @State private var showingAddAccountSheet: Bool = false
     
+    private var allAccountsAmount: Decimal {
+        accounts.reduce(0) { $0 + $1.amount }
+    }
+    
+    private var allAccountsTransactions: Int {
+        accounts.reduce(0) { $0 + $1.transactions.count }
+    }
+    
     
     // MARK: - body
     var body: some View {
         NavigationStack {
             List {
+                NavigationLink {
+                    TransactionList()
+                } label: {
+                    AccountListRow(
+                        name: "All accounts",
+                        amount: allAccountsAmount,
+                        transactionsNumber: allAccountsTransactions
+                    )
+                }
+                
                 ForEach(accounts) { account in
                     NavigationLink {
-                        AccountDetail(account: account)
+                        TransactionList(account: account)
                     } label: {
                         AccountListRow(
                             name: account.name,
