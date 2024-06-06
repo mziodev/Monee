@@ -16,6 +16,10 @@ import SwiftData
 import SwiftUI
 
 struct TransactionList: View {
+    let accountName: String
+    
+    @Environment(\.modelContext) private var modelContext
+    
     @Query(
         sort: [
             SortDescriptor(\Transaction.date, order: .reverse),
@@ -23,16 +27,31 @@ struct TransactionList: View {
         ]
     ) var transactions: [Transaction]
     
-    @Environment(\.modelContext) private var modelContext
-    
     @State private var showingAddTransactionSheet: Bool = false
+     
     
+    // MARK: - computed propeties
     private var transactionsGroupedByDate: [(Date, [Transaction])] {
         Dictionary(grouping: transactions) {
             Calendar.current.startOfDay(for: $0.date)
         }
         .sorted { $0.key > $1.key }
         .map { ($0.key, $0.value) }
+    }
+    
+    
+    //MARK: - init
+    init(accountName: String = "") {
+        self.accountName = accountName
+        
+        if !self.accountName.isEmpty {
+            _transactions = Query(
+                filter: #Predicate { $0.account?.name == accountName ?? "" },
+                sort: [
+                    SortDescriptor(\Transaction.date, order: .reverse),
+                    SortDescriptor(\Transaction.payee?.name)
+                ])
+        }
     }
     
     
@@ -99,7 +118,14 @@ struct TransactionList: View {
     }
 }
 
-#Preview {
+
+// MARK: - previews
+#Preview("All accounts list") {
     TransactionList()
+        .modelContainer(SampleData.shared.modelContainer)
+}
+
+#Preview("Filtered by account list") {
+    TransactionList(accountName: "Sabadell")
         .modelContainer(SampleData.shared.modelContainer)
 }
