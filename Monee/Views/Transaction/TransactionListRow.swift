@@ -27,21 +27,16 @@ struct TransactionListRow: View {
             
             Text(
                 amount.formatted(
-                    .currency(
-                        code: Transaction.currencyCode
-                    )
+                    .currency(code: FormatUtilities.currencyCode)
                 )
             )
             .foregroundStyle(amount < 0 ? .red : .green)
             .font(.title3.bold())
             .fontDesign(.serif)
         }
-//        .padding(.vertical, 10)
     }
 }
 
-
-// MARK: - previews
 #Preview("Positive transaction") {
     List {
         TransactionListRow(

@@ -23,15 +23,14 @@ struct AccountListRow: View {
             
             Text(
                 amount,
-                format: .currency(
-                    code: Account.currencyLocaleIdentifier
-                )
+                format: .currency(code: FormatUtilities.currencyCode)
             )
         }
     }
 }
 
 #Preview {
-    AccountListRow(name: "ABANCA", amount: 2345.67, transactionsNumber: 3)
-        .padding(.horizontal)
+    List {
+        AccountListRow(name: "ABANCA", amount: 2345.67, transactionsNumber: 3)
+    }
 }

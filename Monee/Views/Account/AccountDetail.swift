@@ -5,27 +5,32 @@
 //  Created by MZiO on 18/5/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AccountDetail: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     
+    @Query(sort: \Account.name) var accounts: [Account]
+    
     @Bindable var account: Account
     
     @FocusState var nameTextFieldFocused: Bool
     
+    @State private var showingDuplicateAlert: Bool = false
+    
     let isNew: Bool
     
+    private var isAccountNameValid: Bool {
+        ValidationUtilities.isAboveMinimumLength(account.name)
+    }
     
-    // MARK: - init
     init(account: Account, isNew: Bool = false) {
         self.account = account
         self.isNew = isNew
     }
     
-    
-    // MARK: - body
     var body: some View {
         VStack {
             Image(systemName: "building.columns.fill")
@@ -42,9 +47,7 @@ struct AccountDetail: View {
                     TextField(
                         "Account amount",
                         value: $account.amount,
-                        format: .currency(
-                            code: Account.currencyLocaleIdentifier
-                        )
+                        format: .currency(code: FormatUtilities.currencyCode)
                     )
                     .padding(.horizontal, 5)
                     .keyboardType(.decimalPad)
@@ -61,46 +64,50 @@ struct AccountDetail: View {
         }
         .navigationTitle(isNew ? "New account" : account.name)
         .navigationBarTitleDisplayMode(.inline)
-        
-        
-        // MARK: - onAppear
+        .interactiveDismissDisabled()
         .onAppear {
             if isNew { nameTextFieldFocused.toggle() }
         }
-        
-        
-        // MARK: - toolbar
+        .alert(
+            "Duplicate account name!",
+            isPresented: $showingDuplicateAlert,
+            actions: { },
+            message: { Text("There is already an account named '\(account.name)'") }
+        )
         .toolbar {
             if isNew {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { dismiss() }
+                    Button("Save", action: addAccount)
+                        .disabled(!isAccountNameValid)
+                }
+                
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
                 }
             } else {
                 ToolbarItem {
-                    Button("Done") {
-                        dismiss()
-                    }
-                }
-            }
-            
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    dismiss()
+                    Button("Done") { dismiss() }
+                        .disabled(!isAccountNameValid)
                 }
             }
         }
     }
+
+    
+    private func addAccount() {
+        if accounts.contains(where: { $0.name == account.name }) {
+            showingDuplicateAlert = true
+        } else {
+            modelContext.insert(account)
+            dismiss()
+        }
+    }
 }
 
-
-// MARK: - previews
 #Preview("New account") {
     NavigationStack {
-        AccountDetail(
-            account: Account(),
-            isNew: true
-        )
-        .modelContainer(SampleData.shared.modelContainer)
+        AccountDetail(account: Account(), isNew: true)
+            .modelContainer(SampleData.shared.modelContainer)
     }
 }
 

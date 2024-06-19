@@ -16,26 +16,7 @@ class Payee {
     var transactions = [Transaction]()
     
     
-    // MARK: - init
     init(name: String = "") {
         self.name = name
     }
-}
-
-
-// MARK: - sample data extension
-extension Payee {
-    static let sampleData = [
-        Payee(name: "Froiz"),
-        Payee(name: "Gadis"),
-        Payee(name: "El Corte Inglés"),
-        Payee(name: "Amazon"),
-        Payee(name: "Decimas"),
-        Payee(name: "Carrefour"),
-        Payee(name: "O2"),
-        Payee(name: "Gas Natural Fenosa"),
-        Payee(name: "ACS"),
-        Payee(name: "CLRK"),
-        Payee(name: "Druni"),
-    ]
 }

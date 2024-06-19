@@ -16,7 +16,6 @@ struct CategoryList: View {
     @State private var showingAddCategorySheet: Bool = false
     
     
-    // MARK: - body
     var body: some View {
         NavigationStack {
             List {
@@ -33,20 +32,13 @@ struct CategoryList: View {
                 .onDelete(perform: deleteCategories)
             }
             .navigationTitle("Categories")
-            
-            
-            // MARK: - add category sheet
             .sheet(isPresented: $showingAddCategorySheet) {
-                CategoryDetail(category: Category(), isNew: true)
-                    .interactiveDismissDisabled()
+                CategoryDetail(category: Category(), isNew: true) 
             }
-            
-            
-            // MARK: - toolbar
             .toolbar {
                 ToolbarItem {
                     Button {
-                        showingAddCategorySheet.toggle()
+                        showingAddCategorySheet = true
                     } label: {
                         Label("Add category", systemImage: "plus")
                     }
@@ -60,16 +52,12 @@ struct CategoryList: View {
     }
     
     
-    // MARK: - functions
-    func deleteCategories(indexSet: IndexSet) {
-        for index in indexSet {
-            modelContext.delete(categories[index])
-        }
+    func deleteCategories(offsets: IndexSet) {
+        offsets.forEach { modelContext.delete(categories[$0]) }
     }
 }
 
 
-// MARK: - previews
 #Preview {
     CategoryList()
         .modelContainer(SampleData.shared.modelContainer)

@@ -12,21 +12,25 @@ struct PayeeDetail: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     
+    @Query(sort: \Payee.name) var payees: [Payee]
+    
     @Bindable var payee: Payee
     
     @FocusState private var nameTextFieldFocused: Bool
     
+    @State private var showingDuplicatePayeeNameAlert: Bool = false
+    
     let isNew: Bool
     
-    
-    // MARK: - init
+    private var isPayeeNameValid: Bool {
+        ValidationUtilities.isAboveMinimumLength(payee.name)
+    }
+
     init(payee: Payee, isNew: Bool = false) {
         self.payee = payee
         self.isNew = isNew
     }
     
-    
-    // MARK: - body
     var body: some View {
         NavigationStack {
             Form {
@@ -35,15 +39,17 @@ struct PayeeDetail: View {
             }
             .navigationTitle("Edit payee")
             .navigationBarTitleDisplayMode(.inline)
-            
-            
-            // MARK: - onAppear
+            .alert(
+                "Duplicate payee name!",
+                isPresented: $showingDuplicatePayeeNameAlert,
+                actions: { },
+                message: {
+                    Text("There is already a payee named '\(payee.name)'")
+                }
+            )
             .onAppear {
-                if isNew { nameTextFieldFocused.toggle() }
+                if isNew { nameTextFieldFocused = true }
             }
-            
-            
-            // MARK: - toolbar
             .toolbar {
                 if isNew {
                     ToolbarItem(placement: .cancellationAction) {
@@ -51,28 +57,32 @@ struct PayeeDetail: View {
                     }
                     
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Save") {
-                            modelContext.insert(payee)
-                            
-                            dismiss()
-                        }
-                        .disabled(payee.name.isEmpty)
+                        Button("Save", action: savePayee)
+                            .disabled(!isPayeeNameValid)
                     }
                 } else {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done") { dismiss () }
-                            .disabled(!nameTextFieldFocused)
+                            .disabled(!isPayeeNameValid)
                     }
                 }
             }
         }
     }
+    
+    private func savePayee() {
+        if payees.contains(where: { $0.name == payee.name }) {
+            showingDuplicatePayeeNameAlert = true
+        } else {
+            modelContext.insert(payee)
+            dismiss()
+        }
+    }
 }
 
-
-// MARK: - previews
 #Preview("New payee") {
     PayeeDetail(payee: Payee(), isNew: true)
+        .modelContainer(SampleData.shared.modelContainer)
 }
 
 #Preview("Existing payee") {

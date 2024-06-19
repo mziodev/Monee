@@ -28,9 +28,7 @@ struct TransactionList: View {
     ) var transactions: [Transaction]
     
     @State private var showingAccountDetailSheet: Bool = false
-     
-    
-    // MARK: - computed propeties
+
     private var transactionsGroupedByDate: [(Date, [Transaction])] {
         Dictionary(grouping: transactions) {
             Calendar.current.startOfDay(for: $0.date)
@@ -39,14 +37,12 @@ struct TransactionList: View {
         .map { ($0.key, $0.value) }
     }
     
-    
-    //MARK: - init
     init(account: Account? = nil) {
         self.account = account
         
-        let accountName = self.account?.name ?? ""
-        
         if self.account != nil {
+            let accountName = self.account!.name
+            
             _transactions = Query(
                 filter: #Predicate { $0.account?.name == accountName },
                 sort: [
@@ -56,8 +52,6 @@ struct TransactionList: View {
         }
     }
     
-    
-    // MARK: - body
     var body: some View {
         NavigationStack {
             List {
@@ -81,9 +75,7 @@ struct TransactionList: View {
                         }
                         .onDelete { offsets in
                             for offset in offsets {
-                                let transactionToDelete = transactions[offset]
-                                
-                                modelContext.delete(transactionToDelete)
+                                modelContext.delete(transactions[offset])
                             }
                         }
                     }
@@ -109,7 +101,7 @@ struct TransactionList: View {
                 if account != nil {
                     ToolbarItem {
                         Button {
-                            showingAccountDetailSheet.toggle()
+                            showingAccountDetailSheet = true
                         } label: {
                             Label("Edit account", systemImage: "square.and.pencil")
                         }

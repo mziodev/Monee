@@ -28,7 +28,7 @@ struct MoneeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AccountList()
+            TransactionList()
         }
         .modelContainer(sharedModelContainer)
     }

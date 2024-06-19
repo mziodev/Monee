@@ -9,61 +9,56 @@ import SwiftData
 import SwiftUI
 
 struct AccountList: View {
-    @Query(sort: \Account.name) private var accounts: [Account]
-    
     @Environment(\.modelContext) var modelContext
     
-    @State private var newAccount: Account?
+    @Query(sort: \Account.name) var accounts: [Account]
+    
     @State private var showingAddAccountSheet: Bool = false
     
-    private var allAccountsAmount: Decimal {
+    private var allAccountsTotalAmount: Decimal {
         accounts.reduce(0) { $0 + $1.amount }
     }
-    
-    private var allAccountsTransactions: Int {
+    private var allAccountsTotalTransactions: Int {
         accounts.reduce(0) { $0 + $1.transactions.count }
     }
     
     
-    // MARK: - body
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink {
-                    TransactionList()
-                } label: {
-                    AccountListRow(
-                        name: "All accounts",
-                        amount: allAccountsAmount,
-                        transactionsNumber: allAccountsTransactions
-                    )
+                Section("My accounts") {
+                    ForEach(accounts) { account in
+                        NavigationLink {
+                            TransactionList(account: account)
+                        } label: {
+                            AccountListRow(
+                                name: account.name,
+                                amount: account.amount,
+                                transactionsNumber: account.transactions.count
+                            )
+                        }
+                    }
+                    .onDelete(perform: deleteAccounts)
                 }
                 
-                ForEach(accounts) { account in
+                Section() {
                     NavigationLink {
-                        TransactionList(account: account)
+                        TransactionList()
                     } label: {
                         AccountListRow(
-                            name: account.name,
-                            amount: account.amount,
-                            transactionsNumber: account.transactions.count
+                            name: "All accounts",
+                            amount: allAccountsTotalAmount,
+                            transactionsNumber: allAccountsTotalTransactions
                         )
                     }
                 }
-                .onDelete(perform: deleteAccounts)
             }
             .navigationTitle("Accounts")
-            
-            
-            // MARK: - new account sheet
             .sheet(isPresented: $showingAddAccountSheet) {
                 NavigationStack {
                     AccountDetail(account: Account(), isNew: true)
-                }
-                .interactiveDismissDisabled()
+                } 
             }
-            
-            // MARK: - toolbar
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
@@ -81,26 +76,12 @@ struct AccountList: View {
     }
     
     
-    // MARK: - functions
-    private func addAccount() {
-        withAnimation {
-            let newItem = Account(name: "", type: .savings, amount: 0)
-            
-            modelContext.insert(newItem)
-            
-            newAccount = newItem
-        }
-    }
-    
-    private func deleteAccounts(indexSet: IndexSet) {
-        for index in indexSet {
-            modelContext.delete(accounts[index])
-        }
+    private func deleteAccounts(offsets: IndexSet) {
+        offsets.forEach { modelContext.delete(accounts[$0]) }
     }
 }
 
 #Preview {
     AccountList()
         .modelContainer(SampleData.shared.modelContainer)
-//        .environment(\.locale, Locale(identifier: "es_ES"))
 }

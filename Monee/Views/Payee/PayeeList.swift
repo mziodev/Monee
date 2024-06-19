@@ -15,8 +15,6 @@ struct PayeeList: View {
     
     @State private var showingAddPayeeSheet: Bool = false
     
-    
-    // MARK: - body
     var body: some View {
         NavigationStack {
             List {
@@ -33,20 +31,14 @@ struct PayeeList: View {
                 .onDelete(perform: deletePayees)
             }
             .navigationTitle("Payees")
-            
-            
-            // MARK: - add payee sheet
             .sheet(isPresented: $showingAddPayeeSheet) {
                 PayeeDetail(payee: Payee(), isNew: true)
                     .interactiveDismissDisabled()
             }
-            
-            
-            // MARK: - toolbar
             .toolbar {
                 ToolbarItem {
                     Button {
-                        showingAddPayeeSheet.toggle()
+                        showingAddPayeeSheet = true
                     } label: {
                         Label("Add payee", systemImage: "plus")
                     }
@@ -59,17 +51,11 @@ struct PayeeList: View {
         }
     }
     
-    
-    // MARK: - functions
-    func deletePayees(indexSet: IndexSet) {
-        for index in indexSet {
-            modelContext.delete(payees[index])
-        }
+    func deletePayees(offsets: IndexSet) {
+        offsets.forEach { modelContext.delete(payees[$0]) }
     }
 }
 
-
-// MARK: - preview
 #Preview {
     PayeeList()
         .modelContainer(SampleData.shared.modelContainer)

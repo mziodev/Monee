@@ -9,33 +9,36 @@ import SwiftData
 import SwiftUI
 
 struct TransactionDetail: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+    
     @Query(sort: \Account.name) private var accounts: [Account]
     @Query(sort: \Payee.name) private var payees: [Payee]
     @Query(sort: \Category.name) private var categories: [Category]
-    
-    @Environment(\.modelContext) private var modelContext
-    @Environment(\.dismiss) private var dismiss
     
     @Bindable var transaction: Transaction
     
     let isNew: Bool
     
-    
-    // MARK: - init
     init(transaction: Transaction, isNew: Bool = false) {
         self.transaction = transaction
         self.isNew = isNew
     }
     
     
-    // MARK: - body
+    private var isTransactionValid: Bool {
+        transaction.account != nil && 
+        transaction.payee != nil &&
+        transaction.category != nil
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
                 TextField(
                     "Amount",
                     value: $transaction.amount,
-                    format: .currency(code: Transaction.currencyCode)
+                    format: .currency(code: FormatUtilities.currencyCode)
                 )
                 .keyboardType(.decimalPad)
                 .multilineTextAlignment(.center)
@@ -44,8 +47,6 @@ struct TransactionDetail: View {
                 .padding(.bottom, 10)
                 .foregroundStyle(transaction.amount < 0 ? .red : .primary)
                 
-                
-                // MARK: - form
                 Form {
                     Section {
                         Picker("Account", selection: $transaction.account) {
@@ -98,9 +99,6 @@ struct TransactionDetail: View {
                 )
             }
             .navigationBarTitleDisplayMode(.inline)
-            
-            
-            // MARK: - toolbar
             .toolbar {
                 if isNew {
                     ToolbarItem(placement: .cancellationAction) {
@@ -110,13 +108,14 @@ struct TransactionDetail: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Save") {
                             modelContext.insert(transaction)
-                            
                             dismiss()
                         }
+                        .disabled(!isTransactionValid)
                     }
                 } else {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done") { dismiss() }
+                            .disabled(!isTransactionValid)
                     }
                 }
             }
@@ -124,8 +123,6 @@ struct TransactionDetail: View {
     }
 }
 
-
-// MARK: - previews
 #Preview("New transaction") {
     TransactionDetail(transaction: Transaction(), isNew: true)
         .modelContainer(SampleData.shared.modelContainer)

@@ -11,8 +11,6 @@ struct BasicListRow: View {
     let name: String
     let transactionsNumber: Int
     
-    
-    // MARK: - body
     var body: some View {
         VStack(alignment: .leading) {
             Text(name)
@@ -25,8 +23,6 @@ struct BasicListRow: View {
     }
 }
 
-
-// MARK: - previews
 #Preview("One transaction") {
     List {
         BasicListRow(name: "Item name", transactionsNumber: 1)
