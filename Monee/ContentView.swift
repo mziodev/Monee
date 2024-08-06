@@ -5,9 +5,12 @@
 //  Created by MZiO on 5/8/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
         NavigationStack {
             List {
