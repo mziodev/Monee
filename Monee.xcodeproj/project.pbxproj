@@ -7,18 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085094A82C74AEE400FA4A30 /* DetailsSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094A72C74AEE400FA4A30 /* DetailsSectionFooter.swift */; };
+		085094AA2C74B06A00FA4A30 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094A92C74B06A00FA4A30 /* DeleteButton.swift */; };
+		08E2854C2C74986D000767DF /* BudgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2854B2C74986D000767DF /* BudgetDetails.swift */; };
 		08F8CCED2C7395D800BDCD42 /* MoneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */; };
 		08F8CCEF2C7395D800BDCD42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCEE2C7395D800BDCD42 /* ContentView.swift */; };
 		08F8CCF12C7395D900BDCD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F8CCF02C7395D900BDCD42 /* Assets.xcassets */; };
 		08F8CCF42C7395D900BDCD42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F8CCF32C7395D900BDCD42 /* Preview Assets.xcassets */; };
+		08F8CCFE2C73961800BDCD42 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCFD2C73961800BDCD42 /* Budget.swift */; };
+		08F8CD012C7396B000BDCD42 /* BudgetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD002C7396B000BDCD42 /* BudgetType.swift */; };
+		08F8CD042C73971100BDCD42 /* BudgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD032C73971100BDCD42 /* BudgetList.swift */; };
+		08F8CD062C73973F00BDCD42 /* Budget+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD052C73973F00BDCD42 /* Budget+SampleData.swift */; };
+		08F8CD092C73978000BDCD42 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD082C73978000BDCD42 /* SampleData.swift */; };
+		08F8CD0B2C73987B00BDCD42 /* SelectedItemHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD0A2C73987B00BDCD42 /* SelectedItemHolder.swift */; };
+		08F8CD0D2C7398B700BDCD42 /* BudgetListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD0C2C7398B700BDCD42 /* BudgetListRow.swift */; };
+		08F8CD0F2C73992E00BDCD42 /* BudgetEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD0E2C73992E00BDCD42 /* BudgetEmpty.swift */; };
+		08F8CD132C739B8F00BDCD42 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD122C739B8F00BDCD42 /* Format.swift */; };
+		08F8CD152C739BCE00BDCD42 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD142C739BCE00BDCD42 /* String+Validation.swift */; };
+		08F8CD182C739C2F00BDCD42 /* DetailsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CD172C739C2F00BDCD42 /* DetailsSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		085094A72C74AEE400FA4A30 /* DetailsSectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSectionFooter.swift; sourceTree = "<group>"; };
+		085094A92C74B06A00FA4A30 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		08E2854B2C74986D000767DF /* BudgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetails.swift; sourceTree = "<group>"; };
 		08F8CCE92C7395D800BDCD42 /* Monee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneeApp.swift; sourceTree = "<group>"; };
 		08F8CCEE2C7395D800BDCD42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08F8CCF02C7395D900BDCD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F8CCF32C7395D900BDCD42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08F8CCFD2C73961800BDCD42 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		08F8CD002C7396B000BDCD42 /* BudgetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetType.swift; sourceTree = "<group>"; };
+		08F8CD032C73971100BDCD42 /* BudgetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetList.swift; sourceTree = "<group>"; };
+		08F8CD052C73973F00BDCD42 /* Budget+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+SampleData.swift"; sourceTree = "<group>"; };
+		08F8CD082C73978000BDCD42 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		08F8CD0A2C73987B00BDCD42 /* SelectedItemHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemHolder.swift; sourceTree = "<group>"; };
+		08F8CD0C2C7398B700BDCD42 /* BudgetListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListRow.swift; sourceTree = "<group>"; };
+		08F8CD0E2C73992E00BDCD42 /* BudgetEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetEmpty.swift; sourceTree = "<group>"; };
+		08F8CD122C739B8F00BDCD42 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		08F8CD142C739BCE00BDCD42 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		08F8CD172C739C2F00BDCD42 /* DetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +79,11 @@
 		08F8CCEB2C7395D800BDCD42 /* Monee */ = {
 			isa = PBXGroup;
 			children = (
-				08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */,
-				08F8CCEE2C7395D800BDCD42 /* ContentView.swift */,
+				08F8CCFB2C7395E900BDCD42 /* Apps */,
+				08F8CCFF2C73969B00BDCD42 /* Custom Types */,
+				08F8CCFC2C7395ED00BDCD42 /* Models */,
+				08F8CD072C73977000BDCD42 /* Utilities */,
+				08F8CCFA2C7395E200BDCD42 /* Views */,
 				08F8CCF02C7395D900BDCD42 /* Assets.xcassets */,
 				08F8CCF22C7395D900BDCD42 /* Preview Content */,
 			);
@@ -65,6 +96,73 @@
 				08F8CCF32C7395D900BDCD42 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		08F8CCFA2C7395E200BDCD42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08F8CCEE2C7395D800BDCD42 /* ContentView.swift */,
+				08F8CD022C73970000BDCD42 /* Budget */,
+				08F8CD162C739C0C00BDCD42 /* Common */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		08F8CCFB2C7395E900BDCD42 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		08F8CCFC2C7395ED00BDCD42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08F8CCFD2C73961800BDCD42 /* Budget.swift */,
+				08F8CD052C73973F00BDCD42 /* Budget+SampleData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08F8CCFF2C73969B00BDCD42 /* Custom Types */ = {
+			isa = PBXGroup;
+			children = (
+				08F8CD002C7396B000BDCD42 /* BudgetType.swift */,
+			);
+			path = "Custom Types";
+			sourceTree = "<group>";
+		};
+		08F8CD022C73970000BDCD42 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				08E2854B2C74986D000767DF /* BudgetDetails.swift */,
+				08F8CD0E2C73992E00BDCD42 /* BudgetEmpty.swift */,
+				08F8CD032C73971100BDCD42 /* BudgetList.swift */,
+				08F8CD0C2C7398B700BDCD42 /* BudgetListRow.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		08F8CD072C73977000BDCD42 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				08F8CD122C739B8F00BDCD42 /* Format.swift */,
+				08F8CD082C73978000BDCD42 /* SampleData.swift */,
+				08F8CD0A2C73987B00BDCD42 /* SelectedItemHolder.swift */,
+				08F8CD142C739BCE00BDCD42 /* String+Validation.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		08F8CD162C739C0C00BDCD42 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				085094A92C74B06A00FA4A30 /* DeleteButton.swift */,
+				085094A72C74AEE400FA4A30 /* DetailsSectionFooter.swift */,
+				08F8CD172C739C2F00BDCD42 /* DetailsSectionHeader.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +235,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F8CD0F2C73992E00BDCD42 /* BudgetEmpty.swift in Sources */,
+				08F8CD0D2C7398B700BDCD42 /* BudgetListRow.swift in Sources */,
+				085094A82C74AEE400FA4A30 /* DetailsSectionFooter.swift in Sources */,
+				08F8CD012C7396B000BDCD42 /* BudgetType.swift in Sources */,
+				08F8CD152C739BCE00BDCD42 /* String+Validation.swift in Sources */,
+				08F8CD0B2C73987B00BDCD42 /* SelectedItemHolder.swift in Sources */,
+				08F8CD092C73978000BDCD42 /* SampleData.swift in Sources */,
 				08F8CCEF2C7395D800BDCD42 /* ContentView.swift in Sources */,
+				08F8CD042C73971100BDCD42 /* BudgetList.swift in Sources */,
+				08F8CD132C739B8F00BDCD42 /* Format.swift in Sources */,
 				08F8CCED2C7395D800BDCD42 /* MoneeApp.swift in Sources */,
+				08F8CD062C73973F00BDCD42 /* Budget+SampleData.swift in Sources */,
+				085094AA2C74B06A00FA4A30 /* DeleteButton.swift in Sources */,
+				08F8CD182C739C2F00BDCD42 /* DetailsSectionHeader.swift in Sources */,
+				08F8CCFE2C73961800BDCD42 /* Budget.swift in Sources */,
+				08E2854C2C74986D000767DF /* BudgetDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
