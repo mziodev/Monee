@@ -9,11 +9,14 @@ import Foundation
 import SwiftData
 
 @Model
-class Budget {
+class Budget: SortableByIndex {
     var creationDate: Date
     var type: BudgetType
     var name: String
     var sortingIndex: Int
+    
+    @Relationship(deleteRule: .cascade)
+    var accounts: [Account] = []
     
     init(
         creationDate: Date = .now,

@@ -12,6 +12,7 @@ import SwiftUI
 struct MoneeApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
+            Account.self,
             Budget.self,
         ])
         

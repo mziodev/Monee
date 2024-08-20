@@ -17,9 +17,12 @@ class SampleData {
     
     var budget: Budget { Budget.sampleData[0] }
     var budgetNoAccounts: Budget { Budget.sampleData[1] }
+    var openAccount: Account { Account.sampleData[0] }
+    var closedAccount: Account { Account.sampleData[2] }
     
     init() {
         let schema = Schema([
+            Account.self,
             Budget.self,
         ])
         
@@ -42,5 +45,10 @@ class SampleData {
     
     private func insertSampleData() {
         Budget.sampleData.forEach { modelContext.insert($0) }
+        
+        Account.sampleData.forEach {
+            modelContext.insert($0)
+            Budget.sampleData[0].accounts.append($0)
+        }
     }
 }
