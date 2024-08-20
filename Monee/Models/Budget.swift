@@ -18,6 +18,9 @@ class Budget: SortableByIndex {
     @Relationship(deleteRule: .cascade)
     var accounts: [Account] = []
     
+    @Relationship(deleteRule: .cascade)
+    var monthBudgets: [MonthBudget] = []
+    
     init(
         creationDate: Date = .now,
         type: BudgetType = .personal,

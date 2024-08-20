@@ -14,6 +14,7 @@ struct MoneeApp: App {
         let schema = Schema([
             Account.self,
             Budget.self,
+            MonthBudget.self,
         ])
         
         let modelConfiguration = ModelConfiguration(

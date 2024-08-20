@@ -13,6 +13,12 @@
 		085094AE2C74D91900FA4A30 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094AD2C74D91900FA4A30 /* AccountType.swift */; };
 		085094B02C74D94C00FA4A30 /* SortableByIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094AF2C74D94C00FA4A30 /* SortableByIndex.swift */; };
 		085094B22C74D9F600FA4A30 /* Account+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094B12C74D9F600FA4A30 /* Account+SampleData.swift */; };
+		085094B42C74DE2B00FA4A30 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094B32C74DE2B00FA4A30 /* MonthBudget.swift */; };
+		085094B62C74E05E00FA4A30 /* MonthBudget+SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094B52C74E05E00FA4A30 /* MonthBudget+SampleData.swift */; };
+		085094B82C74E12600FA4A30 /* MonthBudget+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094B72C74E12600FA4A30 /* MonthBudget+Date.swift */; };
+		085094BB2C74E1AF00FA4A30 /* MonthBudgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094BA2C74E1AF00FA4A30 /* MonthBudgetDetails.swift */; };
+		085094BD2C74E4AF00FA4A30 /* MonthBudgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094BC2C74E4AF00FA4A30 /* MonthBudgetList.swift */; };
+		085094BF2C74E52800FA4A30 /* Array+MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094BE2C74E52800FA4A30 /* Array+MonthBudget.swift */; };
 		08E2854C2C74986D000767DF /* BudgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2854B2C74986D000767DF /* BudgetDetails.swift */; };
 		08F8CCED2C7395D800BDCD42 /* MoneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */; };
 		08F8CCEF2C7395D800BDCD42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCEE2C7395D800BDCD42 /* ContentView.swift */; };
@@ -38,6 +44,13 @@
 		085094AD2C74D91900FA4A30 /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		085094AF2C74D94C00FA4A30 /* SortableByIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortableByIndex.swift; sourceTree = "<group>"; };
 		085094B12C74D9F600FA4A30 /* Account+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+SampleData.swift"; sourceTree = "<group>"; };
+		085094B32C74DE2B00FA4A30 /* MonthBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudget.swift; sourceTree = "<group>"; };
+		085094B52C74E05E00FA4A30 /* MonthBudget+SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthBudget+SampleData.swift"; sourceTree = "<group>"; };
+		085094B72C74E12600FA4A30 /* MonthBudget+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthBudget+Date.swift"; sourceTree = "<group>"; };
+		085094BA2C74E1AF00FA4A30 /* MonthBudgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudgetDetails.swift; sourceTree = "<group>"; };
+		085094BC2C74E4AF00FA4A30 /* MonthBudgetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudgetList.swift; sourceTree = "<group>"; };
+		085094BE2C74E52800FA4A30 /* Array+MonthBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+MonthBudget.swift"; sourceTree = "<group>"; };
+		0895B55E2C75E5F700ECD20E /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		08E2854B2C74986D000767DF /* BudgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetails.swift; sourceTree = "<group>"; };
 		08F8CCE92C7395D800BDCD42 /* Monee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneeApp.swift; sourceTree = "<group>"; };
@@ -68,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		085094B92C74E18E00FA4A30 /* MonthBudget */ = {
+			isa = PBXGroup;
+			children = (
+				085094BA2C74E1AF00FA4A30 /* MonthBudgetDetails.swift */,
+				085094BC2C74E4AF00FA4A30 /* MonthBudgetList.swift */,
+			);
+			path = MonthBudget;
+			sourceTree = "<group>";
+		};
 		08F8CCE02C7395D800BDCD42 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +109,7 @@
 		08F8CCEB2C7395D800BDCD42 /* Monee */ = {
 			isa = PBXGroup;
 			children = (
+				0895B55E2C75E5F700ECD20E /* TODO.md */,
 				08F8CCFB2C7395E900BDCD42 /* Apps */,
 				08F8CCFF2C73969B00BDCD42 /* Custom Types */,
 				08F8CCFC2C7395ED00BDCD42 /* Models */,
@@ -112,6 +135,7 @@
 				08F8CCEE2C7395D800BDCD42 /* ContentView.swift */,
 				08F8CD022C73970000BDCD42 /* Budget */,
 				08F8CD162C739C0C00BDCD42 /* Common */,
+				085094B92C74E18E00FA4A30 /* MonthBudget */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,8 +153,12 @@
 			children = (
 				085094AB2C74D89000FA4A30 /* Account.swift */,
 				085094B12C74D9F600FA4A30 /* Account+SampleData.swift */,
+				085094BE2C74E52800FA4A30 /* Array+MonthBudget.swift */,
 				08F8CCFD2C73961800BDCD42 /* Budget.swift */,
 				08F8CD052C73973F00BDCD42 /* Budget+SampleData.swift */,
+				085094B32C74DE2B00FA4A30 /* MonthBudget.swift */,
+				085094B72C74E12600FA4A30 /* MonthBudget+Date.swift */,
+				085094B52C74E05E00FA4A30 /* MonthBudget+SampleData.swift */,
 				085094AF2C74D94C00FA4A30 /* SortableByIndex.swift */,
 			);
 			path = Models;
@@ -247,24 +275,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085094BD2C74E4AF00FA4A30 /* MonthBudgetList.swift in Sources */,
 				08F8CD0F2C73992E00BDCD42 /* BudgetEmpty.swift in Sources */,
 				08F8CD0D2C7398B700BDCD42 /* BudgetListRow.swift in Sources */,
+				085094BB2C74E1AF00FA4A30 /* MonthBudgetDetails.swift in Sources */,
 				085094A82C74AEE400FA4A30 /* DetailsSectionFooter.swift in Sources */,
 				08F8CD012C7396B000BDCD42 /* BudgetType.swift in Sources */,
 				08F8CD152C739BCE00BDCD42 /* String+Validation.swift in Sources */,
+				085094B42C74DE2B00FA4A30 /* MonthBudget.swift in Sources */,
 				08F8CD0B2C73987B00BDCD42 /* SelectedItemHolder.swift in Sources */,
 				08F8CD092C73978000BDCD42 /* SampleData.swift in Sources */,
 				085094AE2C74D91900FA4A30 /* AccountType.swift in Sources */,
+				085094BF2C74E52800FA4A30 /* Array+MonthBudget.swift in Sources */,
 				08F8CCEF2C7395D800BDCD42 /* ContentView.swift in Sources */,
 				08F8CD042C73971100BDCD42 /* BudgetList.swift in Sources */,
 				08F8CD132C739B8F00BDCD42 /* Format.swift in Sources */,
 				08F8CCED2C7395D800BDCD42 /* MoneeApp.swift in Sources */,
+				085094B82C74E12600FA4A30 /* MonthBudget+Date.swift in Sources */,
 				085094B02C74D94C00FA4A30 /* SortableByIndex.swift in Sources */,
 				085094AC2C74D89000FA4A30 /* Account.swift in Sources */,
 				08F8CD062C73973F00BDCD42 /* Budget+SampleData.swift in Sources */,
 				085094AA2C74B06A00FA4A30 /* DeleteButton.swift in Sources */,
 				08F8CD182C739C2F00BDCD42 /* DetailsSectionHeader.swift in Sources */,
 				08F8CCFE2C73961800BDCD42 /* Budget.swift in Sources */,
+				085094B62C74E05E00FA4A30 /* MonthBudget+SampleData.swift in Sources */,
 				08E2854C2C74986D000767DF /* BudgetDetails.swift in Sources */,
 				085094B22C74D9F600FA4A30 /* Account+SampleData.swift in Sources */,
 			);

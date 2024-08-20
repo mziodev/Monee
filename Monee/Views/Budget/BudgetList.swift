@@ -24,7 +24,10 @@ struct BudgetList: View {
                     Section("Active budgets") {
                         ForEach(budgets) { budget in
                             NavigationLink {
-                                // go to current month budget
+                                MonthBudgetDetails(
+                                    budget: budget,
+                                    monthBudget: budget.monthBudgets.current
+                                )
                             } label: {
                                 BudgetListRow(budget: budget)
                                     .swipeActions {

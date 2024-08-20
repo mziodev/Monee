@@ -19,11 +19,13 @@ class SampleData {
     var budgetNoAccounts: Budget { Budget.sampleData[1] }
     var openAccount: Account { Account.sampleData[0] }
     var closedAccount: Account { Account.sampleData[2] }
+    var monthBudget: MonthBudget { MonthBudget.sampleData[0] }
     
     init() {
         let schema = Schema([
             Account.self,
             Budget.self,
+            MonthBudget.self,
         ])
         
         let modelConfiguration = ModelConfiguration(
@@ -49,6 +51,11 @@ class SampleData {
         Account.sampleData.forEach {
             modelContext.insert($0)
             Budget.sampleData[0].accounts.append($0)
+        }
+        
+        MonthBudget.sampleData.forEach {
+            modelContext.insert($0)
+            Budget.sampleData[0].monthBudgets.append($0)
         }
     }
 }
