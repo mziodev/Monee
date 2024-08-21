@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct DetailsSectionHeader: View {
-    let name: String
+    let imageName: String
     let description: String
     
     var body: some View {
         HStack {
             Spacer()
             
-            Image(systemName: name)
+            Image(systemName: imageName)
                 .font(.system(size: 100))
                 .foregroundStyle(Color.accentColor)
                 .accessibilityLabel(description)
@@ -29,7 +29,7 @@ struct DetailsSectionHeader: View {
     let budget = SampleData.shared.budget
     
     return DetailsSectionHeader(
-        name: budget.type.systemImage,
+        imageName: budget.type.systemImage,
         description: budget.type.localizedDescription
     )
 }

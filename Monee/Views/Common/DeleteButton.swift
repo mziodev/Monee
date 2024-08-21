@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeleteButton: View {
-    var itemName: String
+    var title: String
     
     @Binding var showingAlert: Bool
     
@@ -17,7 +17,7 @@ struct DeleteButton: View {
             Spacer()
             
             Button(
-                "Delete \(itemName)",
+                title,
                 role: .destructive
             ) {
                 showingAlert = true
@@ -33,5 +33,5 @@ struct DeleteButton: View {
 }
 
 #Preview {
-    DeleteButton(itemName: "Budget", showingAlert: .constant(false))
+    DeleteButton(title: "Delete Budget", showingAlert: .constant(false))
 }

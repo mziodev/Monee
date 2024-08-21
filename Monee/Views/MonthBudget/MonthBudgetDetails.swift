@@ -43,6 +43,9 @@ struct MonthBudgetDetails: View {
                     shownMonthBudget: $shownMonthBudget
                 )
             }
+            .sheet(isPresented: $showingAccountList) {
+                AccountList(budget: budget)
+            }
             .toolbar {
                 ToolbarItem {
                     Button {

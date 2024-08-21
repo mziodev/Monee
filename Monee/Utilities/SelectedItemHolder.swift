@@ -9,5 +9,6 @@ import Foundation
 
 @Observable
 class SelectedItemHolder {
+    var account: Account?
     var budget: Budget?
 }

@@ -12,4 +12,8 @@ struct Format {
     static var currencyCode: String {
         Locale.current.currency?.identifier ?? "USD"
     }
+    
+    static func getColor(for amount: Decimal) -> Color {
+        amount > 0 ? .green : (amount < 0 ? .red : .secondary)
+    }
 }

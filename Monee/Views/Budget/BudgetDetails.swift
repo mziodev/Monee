@@ -41,7 +41,7 @@ struct BudgetDetails: View {
                     .pickerStyle(.menu)
                 } header: {
                     DetailsSectionHeader(
-                        name: budget.type.systemImage,
+                        imageName: budget.type.systemImage,
                         description: budget.type.localizedDescription
                     )
                     .padding(.bottom, 10)
@@ -70,7 +70,7 @@ struct BudgetDetails: View {
             .overlay {
                 if !isNew {
                     DeleteButton(
-                        itemName: "Budget",
+                        title: "Delete Budget",
                         showingAlert: $showingDeleteBudgetAlert
                     )
                 }

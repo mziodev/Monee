@@ -19,6 +19,13 @@
 		085094BB2C74E1AF00FA4A30 /* MonthBudgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094BA2C74E1AF00FA4A30 /* MonthBudgetDetails.swift */; };
 		085094BD2C74E4AF00FA4A30 /* MonthBudgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094BC2C74E4AF00FA4A30 /* MonthBudgetList.swift */; };
 		085094BF2C74E52800FA4A30 /* Array+MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085094BE2C74E52800FA4A30 /* Array+MonthBudget.swift */; };
+		0895B5612C75E77700ECD20E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B5602C75E77700ECD20E /* AccountList.swift */; };
+		0895B5632C75E7AB00ECD20E /* AccountListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B5622C75E7AB00ECD20E /* AccountListRow.swift */; };
+		0895B5652C75E82800ECD20E /* AccountEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B5642C75E82800ECD20E /* AccountEmpty.swift */; };
+		0895B5672C75E8DA00ECD20E /* Array+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B5662C75E8DA00ECD20E /* Array+Account.swift */; };
+		0895B5692C75E92300ECD20E /* Array+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B5682C75E92300ECD20E /* Array+Sorting.swift */; };
+		0895B56B2C75E98B00ECD20E /* AccountListSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B56A2C75E98B00ECD20E /* AccountListSectionFooter.swift */; };
+		0895B56D2C75EC1300ECD20E /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895B56C2C75EC1300ECD20E /* AccountDetails.swift */; };
 		08E2854C2C74986D000767DF /* BudgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2854B2C74986D000767DF /* BudgetDetails.swift */; };
 		08F8CCED2C7395D800BDCD42 /* MoneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */; };
 		08F8CCEF2C7395D800BDCD42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8CCEE2C7395D800BDCD42 /* ContentView.swift */; };
@@ -51,6 +58,13 @@
 		085094BC2C74E4AF00FA4A30 /* MonthBudgetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudgetList.swift; sourceTree = "<group>"; };
 		085094BE2C74E52800FA4A30 /* Array+MonthBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+MonthBudget.swift"; sourceTree = "<group>"; };
 		0895B55E2C75E5F700ECD20E /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		0895B5602C75E77700ECD20E /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
+		0895B5622C75E7AB00ECD20E /* AccountListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListRow.swift; sourceTree = "<group>"; };
+		0895B5642C75E82800ECD20E /* AccountEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEmpty.swift; sourceTree = "<group>"; };
+		0895B5662C75E8DA00ECD20E /* Array+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Account.swift"; sourceTree = "<group>"; };
+		0895B5682C75E92300ECD20E /* Array+Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sorting.swift"; sourceTree = "<group>"; };
+		0895B56A2C75E98B00ECD20E /* AccountListSectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListSectionFooter.swift; sourceTree = "<group>"; };
+		0895B56C2C75EC1300ECD20E /* AccountDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetails.swift; sourceTree = "<group>"; };
 		08E2854B2C74986D000767DF /* BudgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetails.swift; sourceTree = "<group>"; };
 		08F8CCE92C7395D800BDCD42 /* Monee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F8CCEC2C7395D800BDCD42 /* MoneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneeApp.swift; sourceTree = "<group>"; };
@@ -88,6 +102,18 @@
 				085094BC2C74E4AF00FA4A30 /* MonthBudgetList.swift */,
 			);
 			path = MonthBudget;
+			sourceTree = "<group>";
+		};
+		0895B55F2C75E76A00ECD20E /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				0895B56C2C75EC1300ECD20E /* AccountDetails.swift */,
+				0895B5642C75E82800ECD20E /* AccountEmpty.swift */,
+				0895B5602C75E77700ECD20E /* AccountList.swift */,
+				0895B5622C75E7AB00ECD20E /* AccountListRow.swift */,
+				0895B56A2C75E98B00ECD20E /* AccountListSectionFooter.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		08F8CCE02C7395D800BDCD42 = {
@@ -133,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				08F8CCEE2C7395D800BDCD42 /* ContentView.swift */,
+				0895B55F2C75E76A00ECD20E /* Account */,
 				08F8CD022C73970000BDCD42 /* Budget */,
 				08F8CD162C739C0C00BDCD42 /* Common */,
 				085094B92C74E18E00FA4A30 /* MonthBudget */,
@@ -153,7 +180,9 @@
 			children = (
 				085094AB2C74D89000FA4A30 /* Account.swift */,
 				085094B12C74D9F600FA4A30 /* Account+SampleData.swift */,
+				0895B5662C75E8DA00ECD20E /* Array+Account.swift */,
 				085094BE2C74E52800FA4A30 /* Array+MonthBudget.swift */,
+				0895B5682C75E92300ECD20E /* Array+Sorting.swift */,
 				08F8CCFD2C73961800BDCD42 /* Budget.swift */,
 				08F8CD052C73973F00BDCD42 /* Budget+SampleData.swift */,
 				085094B32C74DE2B00FA4A30 /* MonthBudget.swift */,
@@ -275,10 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0895B5632C75E7AB00ECD20E /* AccountListRow.swift in Sources */,
 				085094BD2C74E4AF00FA4A30 /* MonthBudgetList.swift in Sources */,
 				08F8CD0F2C73992E00BDCD42 /* BudgetEmpty.swift in Sources */,
+				0895B5672C75E8DA00ECD20E /* Array+Account.swift in Sources */,
 				08F8CD0D2C7398B700BDCD42 /* BudgetListRow.swift in Sources */,
 				085094BB2C74E1AF00FA4A30 /* MonthBudgetDetails.swift in Sources */,
+				0895B56B2C75E98B00ECD20E /* AccountListSectionFooter.swift in Sources */,
 				085094A82C74AEE400FA4A30 /* DetailsSectionFooter.swift in Sources */,
 				08F8CD012C7396B000BDCD42 /* BudgetType.swift in Sources */,
 				08F8CD152C739BCE00BDCD42 /* String+Validation.swift in Sources */,
@@ -289,6 +321,8 @@
 				085094BF2C74E52800FA4A30 /* Array+MonthBudget.swift in Sources */,
 				08F8CCEF2C7395D800BDCD42 /* ContentView.swift in Sources */,
 				08F8CD042C73971100BDCD42 /* BudgetList.swift in Sources */,
+				0895B56D2C75EC1300ECD20E /* AccountDetails.swift in Sources */,
+				0895B5692C75E92300ECD20E /* Array+Sorting.swift in Sources */,
 				08F8CD132C739B8F00BDCD42 /* Format.swift in Sources */,
 				08F8CCED2C7395D800BDCD42 /* MoneeApp.swift in Sources */,
 				085094B82C74E12600FA4A30 /* MonthBudget+Date.swift in Sources */,
@@ -298,9 +332,11 @@
 				085094AA2C74B06A00FA4A30 /* DeleteButton.swift in Sources */,
 				08F8CD182C739C2F00BDCD42 /* DetailsSectionHeader.swift in Sources */,
 				08F8CCFE2C73961800BDCD42 /* Budget.swift in Sources */,
+				0895B5652C75E82800ECD20E /* AccountEmpty.swift in Sources */,
 				085094B62C74E05E00FA4A30 /* MonthBudget+SampleData.swift in Sources */,
 				08E2854C2C74986D000767DF /* BudgetDetails.swift in Sources */,
 				085094B22C74D9F600FA4A30 /* Account+SampleData.swift in Sources */,
+				0895B5612C75E77700ECD20E /* AccountList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
